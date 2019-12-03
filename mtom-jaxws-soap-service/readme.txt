@@ -35,4 +35,4 @@ Note: The the "Request 1" has two tags:
 
 10. You can see the generated wsdl from http://localhost:9721/FileService?wsdl
 
-  
+https://www.youracclaim.com/users/arif-shaikh/badges  
