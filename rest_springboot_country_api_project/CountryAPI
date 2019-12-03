@@ -1,0 +1,108 @@
+openapi: 3.0.0
+info:
+  version: "1.0.0"
+  title: 'Country API'
+  description: 'API through which users can get information of a Country or post info about new Country'
+  termsOfService: https://github.com/aashaikh1/code
+  contact:
+    name: ArifAShaikh
+    url: https://github.com/aashaikh1/code
+    email: aashaikh@net
+  license:
+    name: AAShaikh
+    url: https://github.com/aashaikh1/code
+  
+servers:
+  - url: https://dev.smartbear.com/v1
+    description: Dev Server
+  
+  - url: https://prod.food.com/v1
+    description: Prod Server
+    
+paths:
+  /countries:
+    get:
+      description: Get information about Coutries from the database
+      parameters: 
+        - name: bodyLimit
+          in: query
+          description: The amount of countries returned
+          schema:
+            type: integer
+            minimum: 10
+            maximum: 20
+            example: 15
+        
+        - name: pageLimit
+          in: query
+          description: The pages to return countries
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 5
+            example: 2
+      responses:
+        200:
+          description: Successful pull of country info
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Countries'
+    
+    post:
+      description: Creates a new Country in the database
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Country'
+                  
+      responses:
+        200:
+          description: Successfully created a new Country
+              
+  /countries/{id}:
+    get:
+      description: Obtain information about specific Country
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The ID of the Country
+          schema:
+            type: integer
+            example: 54
+            
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+              
+components:
+  schemas:
+  
+    Countries:
+      description: Array of Country info
+      type: array
+      items:
+        $ref: '#/components/schemas/Country'
+    
+    Country:
+      description: Model containing country info
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 5
+        
+        country name:
+          type: string
+          example: Australia
+        
+        counntry population:
+          type: integer
+          example: 25000000

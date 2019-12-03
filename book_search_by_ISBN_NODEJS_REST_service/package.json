@@ -1,0 +1,17 @@
+{
+  "name": "status-app",
+  "version": "1.0.0",
+  "description": "First Node Project returns info",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "AAShaikh",
+  "license": "IPL-1.0",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "xml2js": "^0.4.19"
+  }
+}
