@@ -25,4 +25,4 @@ Request Sent: Hello there MessageId: ID:DESKTOP-OGRV4LJ-58855-1575698444298-1:3:
 Request Received: Hello there MessageId: ID:DESKTOP-OGRV4LJ-58855-1575698444298-1:3:1:1:1
 Response Received: Your Message has been received MessageId: ID:DESKTOP-OGRV4LJ-58855-1575698444298-1:2:1:1:1 CorrelationId: ID:DESKTOP-OGRV4LJ-58855-1575698444298-1:3:1:1:1
 
-Note: MessageId and CorrelationId will be different on your machine but MessageId in Request Sent: entry will be same as the CorrelationId in the Response Received: entry above. 
+Note: MessageId and CorrelationId will be different on your machine but whatever they are the MessageId in Request Sent: entry will be same as the CorrelationId in the Response Received: entry. 
