@@ -17,7 +17,8 @@ B. Installed MQ (in this case you will have to install ActiveMQ on your machine)
    Start the installed ActiveMQ on your machine. 
    The default url/port used by installed ActiveMQ for JMS connections is: tcp://localhost:61616
    The default user/pwd used by installed ActiveMQ is: admin/admin
-   If Any of these values are different for your installed ActiveMQ then you need to change them respectively in resources\application-installedActiveMq.properties file in this project.
+   If Any of these values are different for your installed ActiveMQ then you need to change them respectively in 
+   resources\application-installedActiveMq.properties file in this project.
    Run the project using installed MQ: mvn exec:java -Psendrecv -Dspring.profiles.active=installedActiveMq
 
 4. After running the project examine the output kind of similar to below:
