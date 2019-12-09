@@ -1,4 +1,4 @@
-About this project :
+About this project:
 This is a prototype to implement SOAP Service staring from WSDL in minimal form using JAX-WS and requests to this Soap FlightService is sent from soapui. When you build this project some of the java artifacts of this JAX-WS SOAP Flight Service are generated from the WSDL/XSD I wrote at the start. 
 
 0. Download this project in a directory 
