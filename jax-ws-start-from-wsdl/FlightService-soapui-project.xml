@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ae9b3d19-c788-4ea2-8da1-9859cc2c47d8" activeEnvironment="Default" name="FlightService" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b936946c-20c5-47ee-badf-f444a72074cb" wsaVersion="NONE" name="FlightServiceServiceSoapBinding" type="wsdl" bindingName="{http://flightservice.arif.com/}FlightServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/workspace/jaxws/jax-ws-start-from-wsdl/FlightService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/workspace/jaxws/jax-ws-start-from-wsdl/FlightService.wsdl"><con:part><con:url>file:/C:/workspace/jaxws/jax-ws-start-from-wsdl/FlightService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="FlightServiceService" targetNamespace="http://flightservice.arif.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://flightservice.arif.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://flightservice.arif.com/">
+      <xsd:include schemaLocation="Flightservice.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="updateFlight">
+    <wsdl:part name="parameters" element="tns:updateFlight"/>
+  </wsdl:message>
+  <wsdl:message name="updateFlightResponse">
+    <wsdl:part name="parameters" element="tns:updateFlightResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getFlightsByAirlineName">
+    <wsdl:part name="parameters" element="tns:getFlightsByAirlineName"/>
+  </wsdl:message>
+  <wsdl:message name="getFlightsByAirlineNameResponse">
+    <wsdl:part name="parameters" element="tns:getFlightsByAirlineNameResponse"/>
+  </wsdl:message>
+  <wsdl:message name="FlightNotFoundException">
+    <wsdl:part name="FlightNotFoundException" element="tns:FlightNotFound"/>
+  </wsdl:message>
+  <wsdl:portType name="FlightService">
+    <wsdl:operation name="getFlightsByAirlineName">
+      <wsdl:input name="getFlightsByAirlineName" message="tns:getFlightsByAirlineName"/>
+      <wsdl:output name="getFlightsByAirlineNameResponse" message="tns:getFlightsByAirlineNameResponse"/>
+      <wsdl:fault name="FlightNotFoundException" message="tns:FlightNotFoundException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateFlight">
+      <wsdl:input name="updateFlight" message="tns:updateFlight"/>
+      <wsdl:output name="updateFlightResponse" message="tns:updateFlightResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FlightServiceServiceSoapBinding" type="tns:FlightService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getFlightsByAirlineName">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getFlightsByAirlineName">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFlightsByAirlineNameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="FlightNotFoundException">
+        <soap:fault name="FlightNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateFlight">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateFlight">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateFlightResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FlightServiceService">
+    <wsdl:port name="FlightServicePort" binding="tns:FlightServiceServiceSoapBinding">
+      <soap:address location="http://localhost:9721/FlightService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\workspace\jaxws\jax-ws-start-from-wsdl\Flightservice.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" elementFormDefault="unqualified" attributeFormDefault="unqualified" targetNamespace="http://flightservice.arif.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://flightservice.arif.com/">
+  <xs:complexType name="getFlightsByAirlineName">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="airlineName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFlightsByAirlineNameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:flight"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="flight">
+    <xs:sequence>
+      <xs:element name="flightId" type="xs:int"/>
+      <xs:element minOccurs="1" name="flightNum" type="xs:string"/>
+      <xs:element minOccurs="1" name="airlineName" type="xs:string"/>
+      <xs:element minOccurs="1" name="source" type="xs:string"/>
+      <xs:element minOccurs="1" name="destination" type="xs:string"/>
+      <xs:element minOccurs="1" name="departureTime" type="xs:dateTime"/>
+      <xs:element minOccurs="1" name="arrivalTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateFlight">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="flight" type="tns:flight"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateFlightResponse">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="return" type="tns:flight"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightNotFound" type="tns:FlightNotFound"/>
+  <xs:complexType name="FlightNotFound">
+    <xs:sequence>
+      <xs:element name="flightName" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="updateFlight" type="tns:updateFlight"/>
+  <xs:element name="updateFlightResponse" type="tns:updateFlightResponse"/>
+  <xs:element name="getFlightsByAirlineName" type="tns:getFlightsByAirlineName"/>
+  <xs:element name="getFlightsByAirlineNameResponse" type="tns:getFlightsByAirlineNameResponse"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9721/FlightService</con:endpoint></con:endpoints><con:operation id="25e6fd72-7682-401e-a802-5f4f480056ce" isOneWay="false" action="" name="updateFlight" bindingOperationName="updateFlight" type="Request-Response" inputName="updateFlight" sendsAttachments="false" anonymous="optional" outputName="updateFlightResponse" receivesAttachments="false"><con:settings/><con:call id="c91af940-6ee3-4840-a099-2814ae1155db" name="updateFlightRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9721/FlightService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:flig="http://flightservice.arif.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <flig:updateFlight>
+         <flight>
+            <flightId>101</flightId>
+            <flightNum>AU001</flightNum>
+            <airlineName>Arif Airline</airlineName>
+            <source>SYD</source>
+            <destination>ADL</destination>
+            <departureTime>2020-01-10T11:55:00</departureTime>
+            <arrivalTime>2020-01-10T17:55:00</arrivalTime>
+         </flight>
+      </flig:updateFlight>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://flightservice.arif.com/FlightService/updateFlight"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="20dddf75-0922-41bf-8e26-340a2ce769cc" isOneWay="false" action="" name="getFlightsByAirlineName" bindingOperationName="getFlightsByAirlineName" type="Request-Response" outputName="getFlightsByAirlineNameResponse" inputName="getFlightsByAirlineName" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bd4b47fa-4141-4c1a-86ec-313ced538810" name="getFlightRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9721/FlightService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:flig="http://flightservice.arif.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <flig:getFlightsByAirlineName>
+         <airlineName>Australian Airline</airlineName>
+      </flig:getFlightsByAirlineName>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://flightservice.arif.com/FlightService/getFlightsByAirlineName"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
