@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://flightservice.arif.com/" elementFormDefault="unqualified" attributeFormDefault="unqualified" targetNamespace="http://flightservice.arif.com/">
+
+    <xs:complexType name="getFlightsByAirlineName">
+        <xs:sequence>
+            <xs:element minOccurs="1" name="airlineName" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getFlightsByAirlineNameResponse">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:flight"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="flight">
+        <xs:sequence>
+            <xs:element name="flightId" type="xs:int"/>
+            <xs:element minOccurs="1" name="flightNum" type="xs:string"/>
+            <xs:element minOccurs="1" name="airlineName" type="xs:string"/>
+            <xs:element minOccurs="1" name="source" type="xs:string"/>
+            <xs:element minOccurs="1" name="destination" type="xs:string"/>
+            <xs:element minOccurs="1" name="departureTime" type="xs:dateTime"/>
+            <xs:element minOccurs="1" name="arrivalTime" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="updateFlight">
+        <xs:sequence>
+            <xs:element minOccurs="1" name="flight" type="tns:flight"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="updateFlightResponse">
+        <xs:sequence>
+            <xs:element minOccurs="1" name="return" type="tns:flight"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:element name="FlightNotFound" type="tns:FlightNotFound"/>
+
+    <xs:complexType name="FlightNotFound">
+        <xs:sequence>
+            <xs:element name="flightName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="updateFlight" type="tns:updateFlight"/>
+    
+    <xs:element name="updateFlightResponse" type="tns:updateFlightResponse"/>
+
+    <xs:element name="getFlightsByAirlineName" type="tns:getFlightsByAirlineName"/>
+
+    <xs:element name="getFlightsByAirlineNameResponse" type="tns:getFlightsByAirlineNameResponse"/>
+</xs:schema>
