@@ -26,5 +26,6 @@ If needed the final archive jar can also be deployed in JEE APP Server like glas
 
 9. Examine that a response has returned response for same flight sent in request.
 
+10. Go back to getFlightRequest and change the airline name as per the newly added flight in steps 7,8 and run the request to load the newly added flight.
 
 https://www.youracclaim.com/users/arif-shaikh/badges  
