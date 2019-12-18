@@ -11,8 +11,8 @@ import java.util.concurrent.Executors;
 public class Application {
     
     private static Application application;
-    ExecutorService executorFixed;
-    ExecutorService executorCached;
+    private ExecutorService executorFixed;
+    private ExecutorService executorCached;
     
     private ChatPeerImpl localChatPeer;
     
