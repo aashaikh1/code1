@@ -1,4 +1,4 @@
-About this project:
+About this project :
 This is a prototype Chat application between peer to peer, means the application will act as a client and server at same time. When first instance of this application is started it will start listening for other instance who wants to chat on a RMI url. When second instance is started passing in the RMI URL of first instance then both can communicate with each other. 
 
 
