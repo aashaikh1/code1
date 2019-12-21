@@ -56,6 +56,11 @@ public class ChatPeerImpl extends UnicastRemoteObject implements ChatPeer{
         peers.remove(peer.getPeerName());
         System.out.println("Peer : " + peer.getPeerName() + " has terminated their chat session.");
     }
+    
+    public synchronized void removePeerLocally(ChatPeer peer) {
+        peers.values().remove(peer);
+    }
+    
 
     @Override
     public String getPeerName() throws RemoteException {
