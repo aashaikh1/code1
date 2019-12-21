@@ -20,4 +20,4 @@ Note1: First param here "Noah" is the chat name as it appears during chat to oth
 Note2: Second param here "1099" is the port on which RMI registry will be started for second instance. Make sure this port is not in use otherwise change the port num appropriately.
 Note3: Third param here "//localhost:1098/ChatPeer" is the RMI URL/PORT of first instance.
 
-4. To exit press Control C.
+4. To exit press Control C. Exiting properly via pressing Coltrol C will remove client with other connected peers.
