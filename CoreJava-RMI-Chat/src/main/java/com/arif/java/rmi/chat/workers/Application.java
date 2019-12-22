@@ -33,8 +33,8 @@ public class Application {
             if(executorFixed != null){
                 executorFixed.shutdownNow();
             }
-            if(executorFixed != null){
-                executorFixed.shutdownNow();
+            if(executorCached != null){
+                executorCached.shutdownNow();
             }
             if(localChatPeer != null){
                 localChatPeer.deRegisterAllPeers();
