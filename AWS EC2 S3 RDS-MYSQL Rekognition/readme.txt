@@ -1,7 +1,7 @@
 AWS EC2 S3 RDS-MYSQL Rekognition
 http://arif-rootuser-load-balancer-674693475.us-west-2.elb.amazonaws.com/
 
-About this project:
+About this project :
 
 This is one of the exercises I finished while doing a course in AWS. It is deployed in AWS with a Elastic Load balancer with two EC2 micro instances running behind for load balancing and fault tolerance. The nice thing of using AWS's Elastic Load Balancer is that it provides a load balancer as a fully managed service.
 
