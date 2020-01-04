@@ -1,4 +1,4 @@
-AWS EC2 S3 RDS-MYSQL Rekognition
+Amazon AWS EC2 S3 RDS-MYSQL Rekognition
 http://arif-rootuser-load-balancer-674693475.us-west-2.elb.amazonaws.com/
 
 About this project :
