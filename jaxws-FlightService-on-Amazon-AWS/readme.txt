@@ -4,7 +4,7 @@ https://github.com/aashaikh1/code1/tree/master/jaxws-soap-start-from-wsdl
 
 I deployed my above jaxws FightService project onto Amazon AWS EC2 as well. The wsdl can be accessed at:
 
-http://3.125.135.92/FlightService?wsdl
+http://ec2-54-244-207-117.us-west-2.compute.amazonaws.com:9721/FlightService?wsdl
 
 This jaxws soap service is hosted on AWS EC2 t2.micro instance so it might be inaccessible at times, try refresh a few times to access above link or when running on below soapui.
 
