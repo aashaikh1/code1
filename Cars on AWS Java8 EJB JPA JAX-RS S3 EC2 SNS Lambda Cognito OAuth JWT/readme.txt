@@ -7,7 +7,7 @@ HTML, JQuery
 Amazon AWS - EC2, Cognito/OAuth, S3, SNS(Simple Notification Service), Lambda (Serverless Compute), SES (Simple Email Service), RDS-MySQL, AWS-Java-SDK
 OAuth, JOSE, JWT (JSON Web Token), Maven, Linux, Glassfish
 
-I have deployed this application on AWS accessible at below link:
+I have deployed this application on AWS accessible at below link :
 Below link use adhoc certificate so to visit it you will have to allow bellow site in your browser. If you are using chrome and when chrome shows warning after you click below link then click "Advanced" link on chrome warning page and then click "Proceed to ec2..." link.
 
 https://ec2-54-218-76-189.us-west-2.compute.amazonaws.com:9191/aws-web-app8-web/
