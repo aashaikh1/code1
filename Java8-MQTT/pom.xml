@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.arif</groupId>
+    <artifactId>Java8-MQTT</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+    </dependencies>
+    
+    <profiles>
+        <profile>
+            <id>publish</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>            
+            <properties>
+                <main.class>com.arif.java8.mqtt.MqttPublisher</main.class>
+                <argument1>tcp://localhost:1883</argument1>
+                <argument2>arif</argument2>
+            </properties>
+        </profile>
+        <profile>
+            <id>callback</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>            
+            <properties>
+                <main.class>com.arif.java8.mqtt.MqttCallbackListener</main.class>
+                <argument1>tcp://localhost:1883</argument1>
+                <argument2>arif</argument2>
+            </properties>
+        </profile>
+    </profiles>
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>${main.class}</mainClass>
+                    <arguments>
+                        <argument>${argument1}</argument>
+                        <argument>${argument2}</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>      
+</project>
