@@ -9,7 +9,9 @@ This project has Frontend which I developed using Angular 10.0.5 also this proje
 
 
 Angular(10) has multiple ways of developing webapps which include Template Driven Way,  Reactive Forms Way etc.
+
 I have developed this webapp using Template Driven Way. 
+
 Later I will add separate sample Angular apps using Control/Validity State, Reactive Forms, Routs etc. 
 
 I have used intuitive naming for classes and variables so its easy to understand the code.
@@ -17,6 +19,7 @@ I have used intuitive naming for classes and variables so its easy to understand
 To run this app please follow:
 
 1. Download and install NodeJS
+
 2. Install Angular from terminal command prompt:
 
    npm install -g @angular/cli@latest
@@ -53,6 +56,7 @@ To run this app please follow:
    By default the Angular web app runs on port 4200 (make sure its not used by any other app)
    
    Then open chrome and goto:
+   
    http://localhost:4200/
    
 
