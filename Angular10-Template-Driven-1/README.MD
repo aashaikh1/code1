@@ -2,7 +2,9 @@ About this project:
 I have developed this sample web application using below technologies:
 
 Angular 10.0.5
+
 Node: 12.18.3
+
 NPM 6.13.1
 
 This project has Frontend which I developed using Angular 10.0.5 also this project has a backend service which I developed using Node: 12.18.3. Angular Frontend calls the NodeJs backend service.
