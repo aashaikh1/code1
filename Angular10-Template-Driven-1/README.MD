@@ -32,6 +32,7 @@ To run this app please follow:
 6. Then start the backend commodities-service using:
 
    npm start
+   
    The backend service runs on port 3000 (make sure its not used by any other app.) 
 
 7. Open new command terminal.
@@ -48,6 +49,7 @@ To run this app please follow:
 10. Then start the Angular frontend webapp by running below on command prompt:
 
    ng serve
+   
    By default the Angular web app runs on port 4200 (make sure its not used by any other app)
    Then open chrome and goto:
    http://localhost:4200/
