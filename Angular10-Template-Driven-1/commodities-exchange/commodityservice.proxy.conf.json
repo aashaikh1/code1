@@ -1,0 +1,7 @@
+{
+  "/api/commodity/*": {
+    "target": "http://localhost:3000/api/commodity",
+    "secure": false,
+  "logLevel": "debug"
+  }
+}
