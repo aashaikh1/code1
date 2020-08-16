@@ -51,6 +51,7 @@ To run this app please follow:
    ng serve
    
    By default the Angular web app runs on port 4200 (make sure its not used by any other app)
+   
    Then open chrome and goto:
    http://localhost:4200/
    
