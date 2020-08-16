@@ -48,7 +48,7 @@ To run this app please follow:
    
 10. Then start the Angular frontend webapp by running below on command prompt:
 
-   ng serve
+    ng serve
    
    By default the Angular web app runs on port 4200 (make sure its not used by any other app)
    
