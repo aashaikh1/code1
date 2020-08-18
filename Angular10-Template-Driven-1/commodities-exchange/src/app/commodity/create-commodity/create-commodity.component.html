@@ -11,7 +11,7 @@
                   <input type="text" class="forminput" placeholder="Commodity Name" maxlength=15 required name="name" ngModel >   
 				  <input type="text" #input (input)="input.value=$event.target.value.toUpperCase()" class="forminput"  placeholder="Commodity Symbol" maxlength=3 required minlength="2" name="symbol" ngModel >  
 				  <input title="Enter numbers max 4 digits" type="number" class="forminput" placeholder="Commodity Value" maxlength=4 required name="currentValue" ngModel>
-				  <select class="forminput" name="market" ngModel>
+				  <select class="forminput" required name="market" ngModel>
 					<option *ngFor="let market of markets" [ngValue]="market">{{market}}</option>
 				  </select>
               </div>  
