@@ -1,0 +1,12 @@
+{
+  "name": "commodities-server",
+  "version": "1.0.0",
+  "main": "commoditiesServer.js",
+  "scripts": {
+    "start": "node commoditiesServer.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19",
+    "express": "^4.17"
+  }
+}

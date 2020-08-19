@@ -1,0 +1,17 @@
+.commodity-list-header { 
+width:54%;
+margin-left: auto; 
+margin-right: auto;
+margin-top:2px;
+border:0px;
+}
+
+.commodity-list-table {
+width:54%; 
+height:200px; 
+margin-left: auto; 
+margin-right: auto; 
+margin-bottom: 5px; 
+overflow-y: auto; 
+background-color: #bac1cc;	
+}

@@ -1,0 +1,94 @@
+<h2 style="margin-top: 0px;margin-bottom: 0px;">Create/Update Commodity</h2>
+  
+
+<div *ngIf="message" style="color: gold;">{{message}}</div>
+
+
+<div style="margin-top: 4px;">  
+  <div>  
+      <div>  
+          <form [formGroup]="commodityForm" (ngSubmit)="onSubmit()" >  
+
+				<div>
+					<input type="text" class="forminput" placeholder="Commodity Name" name="name" formControlName="name" >
+					<div *ngIf="commodityForm.get('name').invalid &&
+							  ( commodityForm.get('name').dirty ||
+								commodityForm.get('name').touched )" style="color: gold;">
+								
+						<div *ngIf="commodityForm.get('name').errors.required">
+						  Name field is mandatory
+						</div>
+						<div *ngIf="commodityForm.get('name').errors.minlength">
+						  Minimum length of Commodity Name is 2
+						</div>
+						<div *ngIf="commodityForm.get('name').errors.maxlength">
+						  Maximum length of Commodity Name is 15
+						</div>
+					</div>				  
+				</div>  
+				  
+				  
+				  
+				<div>  
+					<input type="text" #input (input)="input.value=$event.target.value.toUpperCase()" class="forminput"  placeholder="Commodity Symbol" name="symbol" formControlName="symbol" >  
+					
+					<div *ngIf="commodityForm.get('symbol').invalid &&
+							  ( commodityForm.get('symbol').dirty ||
+								commodityForm.get('symbol').touched )" style="color: gold;">
+						<div *ngIf="commodityForm.get('symbol').errors.required">
+						  Symbol field is mandatory
+						</div>
+						<div *ngIf="commodityForm.get('symbol').errors.minlength">
+						  Minimum length of Commodity Symbol is 2
+						</div>
+						<div *ngIf="commodityForm.get('symbol').errors.maxlength">
+						  Maximum length of Commodity Symbol is 3
+						</div>
+					</div>					
+				</div>  
+				  
+				  
+				  
+				<div>    
+					<input title="Enter numbers max 4 digits" type="number" class="forminput" placeholder="Commodity Value" name="currentValue" formControlName="currentValue">
+					
+					
+					<div *ngIf="commodityForm.get('currentValue').invalid &&
+							  ( commodityForm.get('currentValue').dirty ||
+								commodityForm.get('currentValue').touched )" style="color: gold;">
+						<div *ngIf="commodityForm.get('currentValue').errors.required">
+						  Value field is mandatory
+						</div>
+						<div *ngIf="commodityForm.get('currentValue').errors.min">
+						  Commodity value must not be less than zero
+						</div>
+					</div>
+					
+				</div>
+				  
+				  
+				  
+				<div>  
+					<select class="forminput" name="market" formControlName="market">
+						<option *ngFor="let market of markets" [ngValue]="market">{{market}}</option>
+					</select>
+					<div *ngIf="commodityForm.get('market').invalid &&
+							  ( commodityForm.get('market').dirty ||
+								commodityForm.get('market').touched )" style="color: gold;">
+						<div *ngIf="commodityForm.get('market').errors.required">
+						  Market field is mandatory
+						</div>
+					</div>					
+				</div>
+
+
+              <div class="align-center">    
+                  <button type="submit" class="formbutton">Create/Update</button>  
+				  <input class="formbutton" type="reset">
+              </div>  
+          </form>  
+      </div>  
+  </div>  
+</div>
+
+
