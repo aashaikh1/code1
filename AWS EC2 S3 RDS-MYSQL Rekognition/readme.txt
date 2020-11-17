@@ -1,5 +1,5 @@
 Amazon AWS EC2 S3 RDS-MYSQL Rekognition
-http://arif-rootuser-load-balancer-674693475.us-west-2.elb.amazonaws.com/
+http://arif-image-recognit-loadbalancer-293031027.us-west-2.elb.amazonaws.com/
 
 About this project :
 
@@ -8,6 +8,5 @@ This is one of the exercises I finished while doing a course in AWS. You can upl
 It is deployed in AWS with a Elastic Load balancer with two EC2 micro instances running behind.
 
 This AWS app can be accessed at:
-http://arif-rootuser-load-balancer-674693475.us-west-2.elb.amazonaws.com/
-
+http://arif-image-recognit-loadbalancer-293031027.us-west-2.elb.amazonaws.com/
  
