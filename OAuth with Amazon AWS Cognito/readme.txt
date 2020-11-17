@@ -9,4 +9,4 @@ This project is not using load balancer and only using one EC2 t2.micro instance
 
 This project is running on below link.
 Below link use adhoc certificate so to visit it you will have to allow bellow site in your browser. If you are using chrome and when chrome shows warning after you click below link then click "Advanced" link on chrome warning page and then click "Proceed to ec2..." link.
-https://ec2-54-244-207-117.us-west-2.compute.amazonaws.com:8087/
+https://ec2-34-219-37-53.us-west-2.compute.amazonaws.com:8087/
