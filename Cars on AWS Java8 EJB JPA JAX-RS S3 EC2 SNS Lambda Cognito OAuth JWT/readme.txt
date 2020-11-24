@@ -12,7 +12,7 @@ I started on this project in start of 2020 and I took around 6 weeks on and off 
 I have deployed this application on AWS accessible at below link :
 Below link use adhoc certificate so to visit it you will have to allow bellow site in your browser. If you are using chrome and when chrome shows warning after you click below link then click "Advanced" link on chrome warning page and then click "Proceed to ec2..." link.
 
-https://ec2-54-218-76-189.us-west-2.compute.amazonaws.com:9191/aws-web-app8-web/
+https://ec2-54-184-232-195.us-west-2.compute.amazonaws.com:9191/aws-web-app8-web/
 
 You can visit the above link without login as well but in that case you wont be able to post your cars for selling but you can browse and search cars already posted. 
 
