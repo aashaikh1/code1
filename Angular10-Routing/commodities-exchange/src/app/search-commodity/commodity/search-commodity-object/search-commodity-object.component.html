@@ -1,0 +1,12 @@
+  
+<table class="search-commodity-row">
+<tr>
+          <td title="Commodity Name (Symbol)" style="width:35%;">{{commodity.name + ' - ' + commodity.symbol }}</td>
+          <td title="Commodity Market" style="width:5%;">{{commodity.market}}</td>
+          <td title="Commodity Previous Value" style="width:10%;padding-left: 5px;">${{commodity.previousValue}}</td>
+		  <td title="Commodity Current Value" style="width:10%;" [class.up]="isUpwardChange(commodity)"
+							   [class.down]="!isUpwardChange(commodity)">  
+			${{commodity.currentValue}}
+		  </td>
+</tr>
+</table>

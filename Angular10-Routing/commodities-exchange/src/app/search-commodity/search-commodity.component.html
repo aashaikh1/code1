@@ -1,0 +1,12 @@
+<div style="text-align:center">
+  <app-search-commodity-list (onCommoditySelectedEmitter)="invokePlotCommodity($event)"></app-search-commodity-list>
+</div>
+<div>
+<center>
+  <plotly-draw [commodity]="commodity"></plotly-draw>
+</center>  
+</div>
+
+<!-- Two components referred above using app-search-commodity-list , plotly-draw are sibling cmponents. 
+To send events from sibling1 to sibling2 we have to pass event from sibling1 to its parent then from parent to sibling2
+-->

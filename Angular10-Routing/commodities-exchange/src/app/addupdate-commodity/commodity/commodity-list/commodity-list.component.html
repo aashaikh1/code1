@@ -1,0 +1,19 @@
+<table class="commodity-list-header">
+<tr style="color: gold;">
+			<td style="width:35%;text-align: left;">Name</td>
+			<td style="width:5%;text-align: left;">Mkt</td>
+			<td style="width:10%;text-align: left;">Prev</td>
+			<td style="width:10%;text-align: left;">Curr</td>
+			<td style="width:20%;text-align: left;padding-left: 5px;">Preferred</td>
+			<td style="width:20%;text-align: left;padding-left: 5px;">Delete</td>
+</tr>
+</table>    
+
+<div class="commodity-list-table">
+
+		<ng-container *ngFor="let commodity of commodities$ | async as commodities; index as i;">
+			<app-commodity-object [commodity]="commodity" (togglePreferredEmmiter)="togglePreferredInList($event)" (deleteEmmiter)="deleteInList($event)"></app-commodity-object>
+		</ng-container>
+		
+</div>
+<button (click)="refreshList($event)">Refresh</button>

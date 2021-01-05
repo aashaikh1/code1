@@ -1,0 +1,33 @@
+search-commodity-container {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.up { color: green;
+}
+.down { color: red;
+}
+
+.search-commodity-container .name h3{
+  display: inline-block;
+}
+
+button{
+    height:20px;
+    width:100px;
+}
+
+td tr { height:20px;}
+
+td {
+	text-align: left;
+}
+
+.search-commodity-row {
+	margin-top:2px;
+	border:1px solid;
+	border-color:black;
+}

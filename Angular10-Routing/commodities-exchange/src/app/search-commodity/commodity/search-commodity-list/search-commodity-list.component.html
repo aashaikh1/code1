@@ -1,0 +1,25 @@
+
+<div class="text-align:center">
+	<input name="commoditySearchField" [(ngModel)]="searchQuery" placeholder="Search Here" (keyup)="searchCommodity()">	
+</div>
+<table class="search-commodity-list-header">
+<tr style="color: gold;">
+			<td style="width:35%;text-align: left;">Name</td>
+			<td style="width:5%;text-align: left;">Mkt</td>
+			<td style="width:10%;text-align: left;">Prev</td>
+			<td style="width:10%;text-align: left;">Curr</td>
+</tr>
+</table>    
+
+<div class="search-commodity-list-table">
+
+		<ng-container *ngFor="let commodity of commodities$ | async as commodities; index as i;">
+			<app-search-commodity-object [commodity]="commodity" (click)='commodityClicked(commodity)' 
+						(onCommoditySelectedEmitter)="invokePlotCommodity($event)"></app-search-commodity-object>
+		</ng-container>
+		
+</div>
+
+
+
+
