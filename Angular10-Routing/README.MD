@@ -11,11 +11,17 @@ This project has Frontend which I developed using Angular 10.0.5 also this proje
 
 
 Angular also offers modular way of developing web apps. 
+
 We can design components to be in different modules and each module contains related components.
+
 When configured, the modules can be lazily loaded to optimize for the performance instead of loading all unrelated modules all at once.
+
 I have developed this web app with modules which are lazy loaded as per Angular Routing. 
+
 I have also created a CoreModule which contains the common classes used by all the modules in this web app.
+
 I have also used third party Plotly library to plot the time-series graph showing commodity prices.
+
 I have used intuitive naming for classes and variables so its easy to understand the code.
 
 
