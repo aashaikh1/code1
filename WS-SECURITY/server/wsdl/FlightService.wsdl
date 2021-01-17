@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+                  xmlns:tns="http://flightservice.arif.com/" 
+                  
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+                  name="FlightServiceService" 
+                  targetNamespace="http://flightservice.arif.com/">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://flightservice.arif.com/">
+            <xsd:include schemaLocation="Flightservice.xsd" />
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="getFlightsByAirlineName">
+        <wsdl:part name="parameters" element="tns:getFlightsByAirlineName"/>
+    </wsdl:message>
+    <wsdl:message name="getFlightsByAirlineNameResponse">
+        <wsdl:part name="parameters" element="tns:getFlightsByAirlineNameResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="FlightNotFoundException">
+        <wsdl:part name="FlightNotFoundException" element="tns:FlightNotFound"/>
+    </wsdl:message>
+
+    <wsdl:portType name="FlightService">
+        <wsdl:operation name="getFlightsByAirlineName">
+            <wsdl:input name="getFlightsByAirlineName" message="tns:getFlightsByAirlineName"/>
+            <wsdl:output name="getFlightsByAirlineNameResponse" message="tns:getFlightsByAirlineNameResponse"/>
+            <wsdl:fault name="FlightNotFoundException" message="tns:FlightNotFoundException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="FlightServiceServiceSoapBinding" type="tns:FlightService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="getFlightsByAirlineName">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getFlightsByAirlineName">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getFlightsByAirlineNameResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="FlightNotFoundException">
+                <soap:fault name="FlightNotFoundException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        
+    </wsdl:binding>
+    <wsdl:service name="FlightServiceService">
+        <wsdl:port name="FlightServicePort" binding="tns:FlightServiceServiceSoapBinding">
+            <soap:address location="http://localhost:9000/FlightService"></soap:address>
+                                    
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
