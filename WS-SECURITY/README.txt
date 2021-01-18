@@ -1,13 +1,13 @@
 
 About this project :
-This is a project to demonstrate calling SOAP web service in a fully secure manner using well known WS-SECURITY Standard. 
+I developed this project to demonstrate calling SOAP web service in a fully secure manner using well known WS-SECURITY Standard. 
 
 I HAVE BUILT AND RUN THIS PROJECT USING JAVA 8u202. IF YOU USE JAVA VERSION LESS THAN 8-UPDATE-202 THEN IT MAY NOT WORK BECAUSE OF THE OLD CRYPTO ARTEFACTS THAT COMES WITH OLDER JAVA. 
 
 
-There are two top level directories for this project. 
-I) Server Directory (contains Secure Web Service Server code I developed)
-II). Client Directory (contains Secure Web Service Client code I developed)
+There are two top level directories for this project which I developed. 
+I) Server Directory (contains Secure Web Service Server code)
+II). Client Directory (contains Secure Web Service Client code)
 
 
 Before running this project make sure ports 9000 and 9990 are not used by any other process and are free.
@@ -24,7 +24,7 @@ Before running this project make sure ports 9000 and 9990 are not used by any ot
 
 5. Build the project using: mvn clean install
 
-6. Run Server using: mvn -PsecureClient
+6. Run Client using: mvn -PsecureClient
 
 7. You will see that secure SOAP messages will be sent and received by client and server and then decrypted response will be displayed by client just for your info.
 
